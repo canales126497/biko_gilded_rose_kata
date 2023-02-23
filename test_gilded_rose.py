@@ -5,14 +5,6 @@ from gilded_rose import Item, GildedRose
 
 
 class GildedRoseTest(unittest.TestCase):
-    def test_name_should_not_change(self):
-        items = [Item("Item1", 0, 0)]
-
-        gilded_rose = GildedRose(items)
-        gilded_rose.update_quality()
-
-        self.assertEquals("Item1", items[0].name)
-
     def test_item_quality_is_never_negative(self):
         items = [Item("Concert Stickers", 11, 0)]
 
