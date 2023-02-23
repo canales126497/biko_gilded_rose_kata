@@ -11,7 +11,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(0, items[0].quality)
+        self.assertEqual(0, items[0].quality)
 
     def test_quality_increments_in_backstage_more_than_10_days_for_sale(self):
         items = [Item("Backstage passes to a TAFKAL80ETC concert", 11, 7)]
@@ -19,7 +19,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(8, items[0].quality)
+        self.assertEqual(8, items[0].quality)
 
     def test_quality_increments_in_backstage_between_10_and_5_days_for_sale(self):
         items = [
@@ -29,7 +29,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(9, items[0].quality)
+        self.assertEqual(9, items[0].quality)
 
     def test_quality_increments_in_backstage_less_than_6_days_for_sale(self):
         items = [
@@ -39,7 +39,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(10, items[0].quality)
+        self.assertEqual(10, items[0].quality)
 
     def test_quality_to_0_after_sale_day_in_backstage(self):
         items = [
@@ -49,7 +49,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(0, items[0].quality)
+        self.assertEqual(0, items[0].quality)
 
     def test_quality_increments_in_aged_brie(self):
         items = [
@@ -59,7 +59,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(8, items[0].quality)
+        self.assertEqual(8, items[0].quality)
 
     def test_double_increment_after_sale_day_aged_brie(self):
         items = [
@@ -70,7 +70,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose.update_quality()
         gildedRose.update_quality()
 
-        self.assertEquals(11, items[0].quality)
+        self.assertEqual(11, items[0].quality)
 
     def test_quality_is_never_over_50(self):
         items = [
@@ -80,7 +80,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(50, items[0].quality)
+        self.assertEqual(50, items[0].quality)
 
     def test_quality_should_always_be_80(self):
         items = [
@@ -90,7 +90,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(80, items[0].quality)
+        self.assertEqual(80, items[0].quality)
 
     def test_sale_day_should_never_change(self):
         items = [
@@ -100,7 +100,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose = GildedRose(items)
         gildedRose.update_quality()
 
-        self.assertEquals(20, items[0].sell_in)
+        self.assertEqual(20, items[0].sell_in)
 
     def test_double_degradation_after_sale_day(self):
         items = [
@@ -111,7 +111,7 @@ class GildedRoseTest(unittest.TestCase):
         gildedRose.update_quality()
         gildedRose.update_quality()
 
-        self.assertEquals(3, items[0].quality)
+        self.assertEqual(3, items[0].quality)
 
 if __name__ == '__main__':
     unittest.main()
