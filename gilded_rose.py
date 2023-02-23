@@ -22,12 +22,17 @@ class GildedRose(object):
                     item.quality = 0
                 continue
 
-            if item.name != "Aged Brie":
-                if item.quality > 0:
-                    item.quality = item.quality - 1
-            else:
+
+
+
+
+
+            if item.name == "Aged Brie":
                 if item.quality < 50:
                     item.quality = item.quality + 1
+            else:
+                if item.quality > 0:
+                    item.quality = item.quality - 1
 
 
 
